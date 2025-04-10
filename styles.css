@@ -422,6 +422,17 @@ button:disabled {
     margin-bottom: 15px;
 }
 
+.news-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .news-article p {
     font-size: 16px;
     line-height: 1.5;
