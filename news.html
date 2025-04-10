@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISD News - GRACE AI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="news-container">
+        <h1>ISD News</h1>
+        <div class="news-article">
+            <h2>ISD Student Makes His Mark in Global Competition</h2>
+            <p class="news-meta">Posted on: <span id="newsDateTime"></span></p>
+            <p>
+                An ISD student has recently made headlines by achieving a remarkable position in a prestigious global competition. Representing the International School of Dhaka, the student showcased exceptional talent and dedication, bringing pride to the school community. This achievement highlights ISD's commitment to fostering excellence and supporting students in their endeavors on an international stage.
+            </p>
+            <a href="index.html" class="back-link">Back to GRACE AI</a>
+        </div>
+    </div>
+    <script>
+        // Set the date and time for the news article
+        const newsDateTime = document.getElementById("newsDateTime");
+        const uploadDate = new Date("2025-04-09T10:00:00"); // Example date, can be dynamic
+        newsDateTime.textContent = uploadDate.toLocaleString();
+    </script>
+</body>
+</html>
