@@ -14,6 +14,7 @@ const authModal = document.getElementById("authModal");
 const authForm = document.getElementById("authForm");
 const modalTitle = document.getElementById("modalTitle");
 const closeModal = document.querySelector(".close");
+const userInfo = document.getElementById("userInfo");
 
 // Track Current User and Chat Session
 let currentUser = null;
@@ -31,6 +32,8 @@ if (storedUser) {
     signupBtn.style.display = "none";
     logoutBtn.style.display = "block";
     newChatBtn.style.display = "block";
+    userInfo.style.display = "block";
+    userInfo.textContent = `User: ${currentUser.username} (ID: ${currentUser.userId})`;
     startNewChat();
 }
 
@@ -103,6 +106,8 @@ function handleAuth(e) {
         signupBtn.style.display = "none";
         logoutBtn.style.display = "block";
         newChatBtn.style.display = "block";
+        userInfo.style.display = "block";
+        userInfo.textContent = `User: ${currentUser.username} (ID: ${currentUser.userId})`;
         authModal.style.display = "none";
         startNewChat();
     }
@@ -116,6 +121,7 @@ function logout() {
     signupBtn.style.display = "block";
     logoutBtn.style.display = "none";
     newChatBtn.style.display = "none";
+    userInfo.style.display = "none";
     chatBox.innerHTML = "";
 }
 
