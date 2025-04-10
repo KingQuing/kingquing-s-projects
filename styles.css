@@ -2,25 +2,21 @@ body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
     color: #e0e0e0;
 }
 
 .container {
     display: flex;
-    width: 1000px;
-    height: 600px;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
     background: linear-gradient(135deg, #2a2a4e 0%, #1a1a2e 100%);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    border-radius: 15px;
     overflow: hidden;
 }
 
 .sidebar {
-    width: 200px;
+    width: 250px; /* Slightly wider for better usability */
     background: linear-gradient(180deg, #3a3a6e 0%, #1a1a2e 100%);
     color: #60A5FA;
     padding: 20px;
@@ -28,7 +24,7 @@ body {
 }
 
 .sidebar:hover {
-    width: 220px;
+    width: 270px;
 }
 
 .sidebar h2 {
@@ -67,16 +63,16 @@ body {
 .chat-header {
     background: linear-gradient(45deg, #2563EB, #1E40AF);
     color: white;
-    padding: 10px;
+    padding: 15px;
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
     position: relative;
 }
 
 .user-info {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 15px;
     color: white;
     font-size: 14px;
     background: rgba(0, 0, 0, 0.3);
@@ -189,9 +185,11 @@ body {
 
 .suggestions {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     padding: 10px;
     background: #0f0f1a;
+    gap: 10px;
 }
 
 .suggestion-btn {
@@ -265,10 +263,11 @@ button:disabled {
 
 .modal-content {
     background: linear-gradient(135deg, #2a2a4e 0%, #1a1a2e 100%);
-    margin: 15% auto;
+    margin: 10% auto;
     padding: 20px;
     border-radius: 10px;
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
     text-align: center;
     animation: slideIn 0.3s;
 }
