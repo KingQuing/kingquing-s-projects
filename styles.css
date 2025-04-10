@@ -114,6 +114,60 @@ body {
     color: white;
 }
 
+.ai-message .code-block {
+    position: relative;
+    background: #1e1e2f;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    font-family: 'Consolas', monospace;
+    font-size: 14px;
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
+
+.ai-message .code-block-header {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background: #3a3a6e;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #e0e0e0;
+}
+
+.ai-message .code-block-copy {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #60A5FA;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.ai-message .code-block-copy:hover {
+    background: #2563EB;
+}
+
+/* Simulated syntax highlighting */
+.ai-message .code-block span.keyword {
+    color: #ff79c6;
+}
+
+.ai-message .code-block span.string {
+    color: #f1fa8c;
+}
+
+.ai-message .code-block span.comment {
+    color: #6272a4;
+    font-style: italic;
+}
+
 .typing {
     display: inline-block;
     overflow: hidden;
