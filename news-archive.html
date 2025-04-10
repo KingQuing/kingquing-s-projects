@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISD News Archive - GRACE AI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="news-container">
+        <h1>ISD News Archive</h1>
+        <div id="newsArchiveList"></div>
+        <a href="index.html" class="back-link">Back to GRACE AI</a>
+    </div>
+    <script>
+        const newsDB = JSON.parse(localStorage.getItem("newsDB") || "[]");
+        const newsArchiveList = document.getElementById("newsArchiveList");
+
+        newsDB.sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort by date, newest first
+        newsDB.forEach(article => {
+            const newsArticle = document.createElement("div");
+            newsArticle.className = "news-article";
+            newsArticle.innerHTML = `
+                <h2>${article.title}</h2>
+                <p class="news-meta">Posted on: ${new Date(article.date).toLocaleString()}</p>
+                ${article.image ? `<img src="${article.image}" alt="News Image" class="news-image">` : ""}
+                <p>${article.content}</p>
+                <hr>
+            `;
+            newsArchiveList.appendChild(newsArticle);
+        });
+    </script>
+</body>
+</html>
