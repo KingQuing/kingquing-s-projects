@@ -19,13 +19,16 @@
             <button id="signupBtn">Signup</button>
             <button id="logoutBtn" style="display: none;">Logout</button>
             <button id="newChatBtn" style="display: none;">Create New Chat</button>
+            <button id="profileBtn" style="display: none;">Profile</button>
             <button id="adminBtn" style="display: none;">Admin Panel</button>
+            <div class="chat-history" id="chatHistory" style="display: none;">
+                <h3>Chat History</h3>
+                <div id="chatList"></div>
+            </div>
             <div class="news-section">
                 <h3>ISD NEWS</h3>
-                <div class="news-item">
-                    <a href="news.html" target="_blank">ISD student makes his mark in global competition</a>
-                    <span id="newsDateTime"></span>
-                </div>
+                <div id="newsList"></div>
+                <a href="news-archive.html" target="_blank" class="news-archive-link">View News Archive</a>
             </div>
         </div>
         <div class="main-panel">
@@ -62,12 +65,38 @@
         </div>
     </div>
 
+    <!-- Profile Modal -->
+    <div class="modal" id="profileModal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h3>Edit Profile</h3>
+            <form id="profileForm">
+                <input type="text" id="profilePicture" placeholder="Profile Picture URL">
+                <textarea id="bio" placeholder="Write a short bio..."></textarea>
+                <label for="theme">Theme:</label>
+                <select id="theme">
+                    <option value="dark">Dark</option>
+                    <option value="light">Light</option>
+                </select>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+
     <!-- Admin Modal -->
     <div class="modal" id="adminModal">
         <div class="modal-content">
             <span class="close">×</span>
             <h3>Admin Panel</h3>
             <div id="userList"></div>
+            <h3>Post News Article</h3>
+            <form id="newsForm">
+                <input type="text" id="newsTitle" placeholder="News Title" required>
+                <textarea id="newsContent" placeholder="News Content" required></textarea>
+                <input type="text" id="newsImage" placeholder="Image URL (optional)">
+                <input type="date" id="newsDate" required>
+                <button type="submit">Post News</button>
+            </form>
         </div>
     </div>
 
