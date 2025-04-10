@@ -791,3 +791,32 @@ function showBlacklistedMessage() {
     blacklistedMessage.style.display = "flex";
     localStorage.removeItem("currentUser");
 }
+// Add to the existing script.js
+
+const newsForm = document.getElementById("newsForm");
+
+if (newsForm) {
+    newsForm.addEventListener("submit", handleNewsPost);
+}
+
+function handleNewsPost(e) {
+    e.preventDefault();
+    const title = document.getElementById("newsTitle").value;
+    const content = document.getElementById("newsContent").value;
+    const image = document.getElementById("newsImage").value;
+    const date = document.getElementById("newsDate").value;
+
+    const newsArticle = {
+        id: generateUserId(),
+        title: title,
+        content: content,
+        image: image,
+        date: date
+    };
+
+    newsDB.push(newsArticle);
+    localStorage.setItem("newsDB", JSON.stringify(newsDB));
+    displayNews();
+    adminModal.style.display = "none";
+    alert("News article posted successfully!");
+}
